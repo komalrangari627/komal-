@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic HTML Form</title>
+</head>
+
+<body>
+  <form>
+    <h3>Contact Us Form</h3>
+    Name: <input type="text" name="name" required><br><br>
+    Email: <input type="email" name="email" required><br><br>
+    Message:<br>
+    <textarea name="message" rows="4" cols="30"></textarea><br><br>
+    <input type="submit" value="Send">
+  </form>
+<hr>
+  <form>
+    <h3>Login Form</h3>
+    Username: <input type="text" name="username"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    <input type="submit" value="Login">
+  </form>
+<hr>
+  <form>
+    <h3>Feedback Form</h3>
+    How did you hear about us?<br>
+    <input type="radio" name="source" value="google"> Google<br>
+    <input type="radio" name="source" value="friend"> Friend<br>
+    <input type="radio" name="source" value="ad"> Advertisement<br><br>
+
+    Rate our service:<br>
+    <select name="rating">
+      <option value="excellent">Excellent</option>
+      <option value="good">Good</option>
+      <option value="average">Average</option>
+      <option value="poor">Poor</option>
+    </select><br><br>
+
+    <input type="submit" value="Submit Feedback">
+  </form>
+<hr>
+  <form>
+    <h3>Register Form</h3>
+    Full Name: <input type="text" name="fullname"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    Gender:<br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br><br>
+
+    Hobbies:<br>
+    <input type="checkbox" name="hobby1" value="reading"> Reading<br>
+    <input type="checkbox" name="hobby2" value="travel"> Travel<br>
+    <input type="checkbox" name="hobby3" value="sports"> Sports<br><br>
+
+    <input type="submit" value="Register">
+  </form>
+<hr>
+  <form>
+    <h2>User Registration Form</h2>
+    <!-- Text input -->
+    <label for="fullname">Full Name:</label><br />
+    <input type="text" id="fullname" name="fullname" required /><br /><br />
+
+    <!-- Email -->
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" required /><br /><br />
+
+    <!-- Password -->
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" name="password" required /><br /><br />
+
+    <!-- Number -->
+    <label for="age">Age:</label><br />
+    <input type="number" id="age" name="age" min="1" max="120" /><br /><br />
+
+    <!-- Phone -->
+    <label for="phone">Phone Number:</label><br />
+    <input type="tel" id="phone" name="phone" /><br /><br />
+
+    <!-- Date -->
+    <label for="dob">Date of Birth:</label><br />
+    <input type="date" id="dob" name="dob" /><br /><br />
+
+    <!-- Gender (Radio) -->
+    <label>Gender:</label><br />
+    <input type="radio" id="male" name="gender" value="male" />
+    <label for="male">Male</label><br />
+
+    <input type="radio" id="female" name="gender" value="female" />
+    <label for="female">Female</label><br />
+
+    <input type="radio" id="other" name="gender" value="other" />
+    <label for="other">Other</label><br /><br />
+
+    <!-- Hobbies (Checkbox) -->
+    <label>Hobbies:</label><br />
+    <input type="checkbox" id="sports" name="hobbies" value="sports" />
+    <label for="sports">Sports</label><br />
+
+    <input type="checkbox" id="music" name="hobbies" value="music" />
+    <label for="music">Music</label><br />
+
+    <input type="checkbox" id="reading" name="hobbies" value="reading" />
+    <label for="reading">Reading</label><br /><br />
+
+    <!-- Dropdown -->
+    <label for="country">Country:</label><br />
+    <select id="country" name="country">
+      <option value="">--Select--</option>
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+      <option value="other">Other</option>
+    </select><br /><br />
+
+    <!-- File Upload -->
+    <label for="resume">Upload Resume:</label><br />
+    <input type="file" id="resume" name="resume" /><br /><br />
+
+    <!-- Textarea -->
+    <label for="bio">Short Bio:</label><br />
+    <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br /><br />
+
+    <!-- Submit and Reset -->
+    <input type="submit" value="Submit" />
+    <input type="reset" value="Reset" />
+  </form>
+
+
+</body>
+
+</html>

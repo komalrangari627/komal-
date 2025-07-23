@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>/*
+        body {
+            background-color: red;
+        }
+
+        
+        @media screen and (max-width:576px) {
+            body {
+                background-color: blue !important;
+            }
+        }
+
+         @media screen and (min-width : 576px) and (max-width:990px) {
+            body{
+                background-color: green;
+            }
+        }
+
+        @media screen and (max-width:990px) {
+            body {
+                background-color: red;
+            }
+        }*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .parent{
+          width: 80%;
+            height: 100%;
+            margin: 1rem auto;
+            padding: 3rem;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+            position: relative;
+        }
+         .child {
+            background-color: red;
+            padding: 1rem;
+            color: white;
+            font-weight: bold;
+            filter: grayscale(1);
+            transition: all 0.5s ease;
+        }
+        
+        .child:hover {
+            filter: grayscale(0);
+        }
+         
+           @media screen and (max-width :990px) {
+            .parent {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width :576px) {
+            .parent {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        img {
+            filter: grayscale(1);
+            transition: all 0.5s ease;
+            margin: 20%;
+        }
+
+        img:hover {
+            filter: grayscale(0);
+        }
+
+        .element{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            background-color: red;
+            transform: translateX(-50%) translateY(-50%) scale(.5,.5);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="child child-1">child-1</div>
+        <div class="child child-2">child-2</div>
+        <div class="child child-3">child-3</div>
+        <div class="child child-4">child-4</div>
+
+        <div class="element"></div>
+
+    </div>
+
+    <img src="./pic2.png" alt="">
+
+</body>
+
+</html>

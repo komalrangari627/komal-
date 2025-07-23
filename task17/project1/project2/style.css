@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/********* Header part styling **********/
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #222121;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.nav-list li {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.menu-icon{
+  font-size: 20px;
+  display:none;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar {
+    display: none;
+  }
+  .menu-icon{
+    display: block;
+  }
+}
+
+/*********** Hero-section part styling *************/
+
+.hero-section {
+  width: 100%;
+  height: auto;
+  background: url(./images/heo-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  text-align: center;
+  padding: 140px 0;
+}
+
+.hero-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 15px;
+}
+
+.search-box {
+  max-width: 550px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box input {
+  width: 70%;
+  padding: 10px;
+  outline: none;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  border: 1px solid red;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  outline: none;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+/************ features part styling *************/
+
+.recipe-section {
+  padding: 50px 0;
+}
+
+.recipe-section h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.recipes-cards {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 10px;
+}
+
+.card {
+  background: white;
+  margin: 30px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  padding: 5px;
+}
+
+.card a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+/************ footer part styling *************/
+footer {
+  background-color: #333;
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+}

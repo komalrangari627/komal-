@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element{
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            filter: brightness(100%) contrast(100%);
+        }
+        img{
+           /* filter: brightness(100%) invert(1) blur(3px) grayscale() brightness()
+            invert() blur() opacity()contrast();*/
+            filter: drop-shadow(2px 10px 10px aqua);
+        }
+        .elemnt2>img{
+            box-shadow: 2px 2px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="element"></div>
+    example of drop-shadow in filter property
+    <img src="./pic2.png" alt="">
+    example of box-shadow
+    <div class="elemnt2">
+     <img src="./pic1.png" alt=""></div>
+</body>
+</html>

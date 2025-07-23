@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .mainbox{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 3rem;
+            perspective: 600px;
+            background: linear-gradient(67deg, yellow ,green);
+            text-align: center;
+            font-size: 50px;
+        }
+        .main{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%)rotateX(0deg'angle') rotateY(0deg'angle');
+            transition: all 3s ease;
+            transform-style: preserve-3d;
+        }
+        .mainbox:hover>.main{
+            transform: translate(-50%,-50%)rotateY(360deg)rotateX(360deg'angle');
+        }
+        .box{
+            position: absolute;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(187, 255, 0, 0.5);
+        }
+        .mainbox:hover>.main{
+            
+            transform: translate(-50%,-50%)rotateX(360deg) rotateY(360deg);
+        }
+        .b1{
+            
+            transform: translate(-50%,-50%)rotateY(0deg)translateZ(100px);
+        }
+        .b2{
+          
+            transform: translate(-50%,-50%)rotateY(180deg)translateZ(100px);
+        }
+        .b3{
+            
+            transform: translate(-50%,-50%)rotateY(90deg)translateZ(100px);
+        }
+        .b4{
+            
+            transform: translate(-50%,-50%)rotateY(-90deg)translateZ(100px);
+        }
+        .b5{
+            transform: translate(-50%,-50%)rotateX(90deg)translateZ(100px);
+        }
+        .b6{
+           
+            transform: translate(-50%,-50%)rotateX(-90deg)translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+<div class="mainbox">
+    3d-cube
+    <div class="main">
+        <div class="box b1">front</div>
+        <div class="box b2">left</div>
+        <div class="box b3">right</div>
+        <div class="box b4">top</div>
+        <div class="box b5">bottom</div>
+        <div class="box b6">bottom</div>
+    </div>
+</div>
+</body>
+</html>

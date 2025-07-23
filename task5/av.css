@@ -1,0 +1,20 @@
+.box{
+    height: 15vh;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.a{
+    background-color: green;
+
+}
+
+.p{
+    background-color: blue;
+}
+
+.span{
+    background-color: cadetblue;
+}
