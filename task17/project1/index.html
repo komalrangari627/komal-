@@ -1,23 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 100%;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f9fafb; /* light gray for items */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            transition: background-color 0.2s ease;
+        }
+        .task-item.completed {
+            background-color: #d1fae5; /* light green for completed */
+            text-decoration: line-through;
+            color: #4b5563;
+        }
+        .task-text {
+            flex-grow: 1;
+            font-size: 1rem;
+            color: #1f2937;
+        }
+        .task-actions button {
+            margin-left: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+    </style>
 </head>
 <body>
-  <div class="hero-section">
-    <div class="txt-container">
-      <div class="content">
-        <h1 class="heading">Discover The Thrill Of Mountain Hiking</h1>
-        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, numquam quam nam architecto tenetur dolorem dolor molestiae quidem quia eos autem a esse dolore maxime dignissimos rem alias fuga veritatis.</p>
-        <button class="btn">Start Your Journey</button>
-      </div>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">My To-Do List</h1>
+
+        <div class="flex mb-6 space-x-3">
+            <input type="text" id="taskInput" placeholder="Add a new task..."
+                   class="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="addTaskBtn"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-lg shadow-md transition duration-300 ease-in-out">
+                Add Task
+            </button>
+        </div>
+
+        <ul id="taskList" class="space-y-3">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
     </div>
-    <div class="img-container">
-      <img src="" alt="">
-    </div>
-  </div>
+
+    
 </body>
 </html>

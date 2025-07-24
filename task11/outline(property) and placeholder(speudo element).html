@@ -335,42 +335,7 @@
         </div>
     </div>
 
-    <script>
-        // Get references to the elements
-        const openModalBtn = document.getElementById('openModalBtn');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const confirmModalBtn = document.getElementById('confirmModalBtn');
-        const myModal = document.getElementById('myModal');
-
-        // Function to open the modal
-        function openModal() {
-            myModal.classList.add('show');
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            myModal.classList.remove('show');
-        }
-
-        // Event listeners
-        openModalBtn.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
-        confirmModalBtn.addEventListener('click', closeModal);
-
-        // Close modal if overlay is clicked (but not the content itself)
-        myModal.addEventListener('click', (event) => {
-            if (event.target === myModal) {
-                closeModal();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && myModal.classList.contains('show')) {
-                closeModal();
-            }
-        });
-    </script>
+    
 
 </body>
 </html>
