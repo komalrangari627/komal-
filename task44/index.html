@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Even/Odd Positive/Negative</title>
+</head>
+<body>
+<script>
+  let num = parseInt(prompt("Enter a number:"));
+
+  if (isNaN(num)) {
+    alert("Please enter a valid number.");
+  } else {
+    let parity, sign;
+
+    // Check even or odd
+    if (num % 2 === 0) {
+      parity = "even";
+    } else {
+      parity = "odd";
+    }
+
+    // Check positive, negative, or zero
+    if (num > 0) {
+      sign = "positive";
+    } else if (num < 0) {
+      sign = "negative";
+    } else {
+      sign = "zero";
+    }
+
+    alert(num + " is " + parity + " and " + sign + ".");
+  }
+</script>
+</body>
+</html>

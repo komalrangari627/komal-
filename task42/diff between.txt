@@ -1,0 +1,35 @@
+1. Expression:
+
+Expressions are like phrases in a sentence. They represent computations that resolve to a single value. Think of mathematical operations, variable assignments, or function calls that return something.
+
+2 + 3 is an expression; it evaluates to 5.
+
+"Hello" + " World" is an expression; it evaluates to "Hello World".
+
+myFunction() is an expression if myFunction returns a value.
+
+x > 5 is an expression; it evaluates to true or false.
+
+
+2. Statemet:
+
+Statements are like complete sentences. They perform an action or a series of actions. While expressions can be part of a statement, a statement itself doesn't necessarily produce a value that you can use in another part of your code directly.
+
+let x = 10; is a statement. It declares a variable and assigns a value. The assignment x = 10 is an expression within this statement.
+
+if (condition) { /* code */ } is a statement. It controls the flow of execution.
+
+for (let i = 0; i < 5; i++) { /* code */ } is a statement. It defines a loop.
+
+console.log("Result: " + value); is a statement. It prints something to the console.
+
+
+
+Essentially, all expressions are statements, but not all statements are expressions. When an expression is used on its own, it becomes an "expression statement." For example, 10 + 5; is an expression statement. It calculates 15, but because it's not assigned or used, the value is just discarded.
+
+
+
+
+
+
+

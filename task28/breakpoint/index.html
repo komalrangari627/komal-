@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Bootstrap JS (for components that require it, not strictly needed for this grid layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <body>
+    <style>
+         .section-box {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .column-box {
+            background-color: fuchsia; /* Bootstrap primary blue */
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem; /* Space between columns when stacked */
+        }
+        /* Override margin-bottom for columns in a row to prevent double spacing */
+        .row .column-box {
+            margin-bottom: 0;
+        }
+        /* Add some margin to the bottom of columns when they are not the last in a row */
+        .row > div:not(:last-child) .column-box {
+            margin-bottom: 1rem;
+        }
+        /* Adjust for larger screens where columns are side-by-side */
+        @media (min-width: 576px) {
+            .row > div .column-box {
+                margin-bottom: 0; /* Remove margin when side-by-side */
+            }
+        }
+        
+        </style>
+    </head>
+    <body>
+    <div class="container">
+         <div class="section-box">
+            <h2 class="mb-3 text-center">breakpoint</h2>
+            
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="column-box">
+                        Column 1<br>(12 / 6 / 4)
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="column-box">
+                        Column 2<br>(12 / 6 / 4)
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="column-box">
+                        Column 3<br>(12 / 6 / 4)
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="column-box">
+                        Column 4<br>(12 / 6)
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="column-box">
+                        Column 5<br>(12 / 6)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

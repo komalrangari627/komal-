@@ -1,0 +1,18 @@
+
+while, do while, for (gernal purpose looping statements)
+
+while(condition){
+    statement
+    updatation
+}
+
+do while()
+
+do{
+    statements
+    updatation
+}while(condition)
+
+for(initilize; condition; updatation){
+    statements
+}

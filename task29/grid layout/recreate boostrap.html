@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid Layout</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Bootstrap JS (for components that require it, not strictly needed for this grid layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .custom-container {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            padding: 2.5rem;
+            max-width: 1000px; /* Increased max-width for better desktop view */
+            width: 100%;
+            text-align: center;
+        }
+        .grid-container-wrapper {
+            padding: 1rem;
+            border: 2px dashed #0d6efd; /* Bootstrap blue dashed border */
+            border-radius: 0.75rem;
+            min-height: 400px; /* Minimum height to visualize the grid */
+            width: 800px;
+        }
+        .grid-box {
+            border-radius: 0.75rem; /* Rounded corners for all boxes */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.25rem;
+            padding: 1.5rem; /* Padding inside boxes */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            min-height: 100px; /* Default min-height for all boxes */
+            margin-bottom: 1rem; /* Spacing between rows/columns in Bootstrap */
+        }
+        /* Specific colors for boxes */
+        .box-grey { background-color: #6c757d; /* Bootstrap gray */ }
+        .box-red { background-color: #dc3545; /* Bootstrap red */ }
+        .box-blue { background-color: #0d6efd; /* Bootstrap blue */ }
+        .box-green { background-color: #198754; /* Bootstrap green */ }
+        .box-yellow { background-color: #ffc107; /* Bootstrap yellow */ color: #343a40; /* Darker text for yellow */ }
+
+        /* Custom adjustments for the layout based on the image */
+        /* This is where we combine Bootstrap's grid with custom height/order if needed */
+        /* For the grey box to span multiple rows visually, we'll use flexbox within its column */
+        .grey-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* Gap between the grey box and the rest of the content if it were stacked */
+        }
+
+        /* Adjusting heights for visual similarity to the image on larger screens */
+        @media (min-width: 768px) {
+            .box-grey {
+                min-width: 100%; /* Full width for the grey box */
+                min-height: 380px; /* Make grey box taller to visually span rows */
+            }
+            .box-blue {
+                min-height: 180px; /* Adjust height for blue box */
+            }
+            .box-green {
+                min-height: 180px; /* Adjust height for green box */
+            }
+            .box-yellow {
+                min-height: 180px; /* Adjust height for yellow box */
+            }
+        }
+
+        /* Remove margin-bottom for the last item in a column to avoid extra space */
+        .row > div:last-child .grid-box {
+            margin-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+        <div class="grid-container-wrapper">
+            <div class="row">
+                <!-- Grey Box Column -->
+                <!-- Occupies 3 columns on medium and larger screens -->
+                <div class="col-md-3 grey-column">
+                    <div class="grid-box box-grey"></div>
+                </div>
+
+                <!-- Right Side Content Columns -->
+                <div class="col-md-9">
+                    <div class="row">
+                        
+                        <div class="col-md-5">
+                            <div class="grid-box box-red"></div>
+                        </div>
+                       
+                        <div class="col-md-7">
+                            <div class="grid-box box-blue"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">  
+
+                        <div class="col-md-5">
+                            <div class="grid-box box-green"></div>
+                        </div>
+                    </div>
+                           <div class="col-md-7">
+                            <div class="grid-box box-yellow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+</body>
+</html>

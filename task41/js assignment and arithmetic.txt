@@ -1,0 +1,79 @@
+operators
+
+x + y = 20
+
+operands operators value
+x and y   + , =    20
+
+1.arithmetic operators
++ , - , * , / , %
+
+2.assigment operators
+= , += , -= , *= , /= , %=
+
+3.comparison operators(conditional statement)
+< , > , <= , >= , != , == , ===
+
+4.logical operators
+AND(&&), OR(||), Not(!)
+
+5.bitwise
+and, or, nor, xor, left shift, right shift
+
+6.ternary oprator(ternary statement(is a conditional statement))
+?
+
+7.member access oprator
+  .
+
+8.increement & decreement oprators
+(post++/--,++/--pre) ++ (+1) , --(-1)
+
+data += 10
+data = data + 10
+
+data -= 10
+data = data - 10
+
+data *= 10
+data = data * 10
+
+data /= 10
+data = data / 10
+
+data %= 10
+data = data % 10
+
+10 == 10 : true
+10 == "10" : true
+10 === "10" : false
+10 === 10 : true
+
+let a = 10
+
+10 == a : true
+10 === a : true
+
+let data = 1000
+
+data != 100 : true
+
+let data = 100
+
+data != 100 : false
+
+p   q    p AND(&&) q
+t   t       t
+t   f       f
+f   t       f
+f   f       f
+
+p   q    p OR(||) q
+t   t       t
+t   f       t
+f   t       t
+f   f       f
+
+console.log()
+document.write()
+window.alert()

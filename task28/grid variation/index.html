@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Bootstrap JS (for components that require it, not strictly needed for this grid layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <body>
+        <style>
+        /* Custom styles for better visualization of grid columns */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font */
+            background-color: #f0f2f5; /* Light background */
+        }
+        .grid-example-section {
+            background-color: #ffffff;
+            padding: 2.5rem; /* p-10 equivalent */
+            margin-bottom: 2.5rem; /* mb-10 equivalent */
+            border-radius: 0.75rem; /* rounded-xl equivalent */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl equivalent */
+        }
+        .grid-example-section h2 {
+            font-size: 1.875rem; /* text-3xl equivalent */
+            font-weight: 700; /* font-bold equivalent */
+            color: #1a202c; /* text-gray-900 equivalent */
+            margin-bottom: 1.5rem; /* mb-6 equivalent */
+            text-align: center;
+        }
+        .grid-column-box {
+            background-color: #6366f1; /* Indigo-500 */
+            color: white;
+            padding: 1.5rem; /* p-6 equivalent */
+            border-radius: 0.5rem; /* rounded-lg equivalent */
+            text-align: center;
+            font-weight: 600; /* font-semibold equivalent */
+            margin-bottom: 1rem; /* mb-4 equivalent for visual separation within rows */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px; /* Ensure boxes have a visible height */
+        }
+        .grid-column-box.nested {
+            background-color: #10b981; /* Emerald-500 for nested columns */
+            color: white;
+            font-size: 0.875rem; /* text-sm equivalent */
+            min-height: 60px;
+        }
+        .grid-column-box.offset {
+            background-color: #ef4444; /* Red-500 */
+        }
+        .grid-column-box.order {
+            background-color: #f59e0b; /* Amber-500 */
+        }
+        .grid-column-box.auto {
+            background-color: #3b82f6; /* Blue-500 */
+        }
+        .grid-column-box.variable {
+            background-color: #8b5cf6; /* Violet-500 */
+        }
+        .grid-column-box.gutter-example {
+            background-color: #ec4899; /* Pink-500 */
+        }
+        .border-dashed-container {
+            border: 2px dashed #cbd5e0; /* border-gray-300 */
+            padding: 1rem; /* p-4 */
+            margin-bottom: 1.5rem; /* mb-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 md:p-8 lg:p-12">
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-10">Bootstrap Grid  Variations</h1>
+
+        <!-- Basic Grid -->
+        <div class="grid-example-section">
+            <h2>1. Basic Grid: Fixed Column Widths</h2>
+            
+            <div class="row ">
+                <div class="col-4"><div class="grid-column-box">col-4</div></div>
+                <div class="col-4"><div class="grid-column-box">col-4</div></div>
+                <div class="col-4"><div class="grid-column-box">col-4</div></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><div class="grid-column-box">col-6</div></div>
+                <div class="col-6"><div class="grid-column-box">col-6</div></div>
+            </div>
+            <div class="row">
+                <div class="col-8"><div class="grid-column-box">col-8</div></div>
+                <div class="col-4"><div class="grid-column-box">col-4</div></div>
+            </div>
+        </div>
+
+        <!-- Responsive Grid -->
+        <div class="grid-example-section">
+            <h2>2. Responsive Grid: Stacking and Resizing</h2>
+            
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3"><div class="grid-column-box">col-12 col-sm-6 col-md-4 col-lg-3</div></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3"><div class="grid-column-box">col-12 col-sm-6 col-md-4 col-lg-3</div></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3"><div class="grid-column-box">col-12 col-sm-6 col-md-4 col-lg-3</div></div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3"><div class="grid-column-box">col-12 col-sm-6 col-md-4 col-lg-3</div></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8"><div class="grid-column-box">col-md-8 (full width on small screens)</div></div>
+                <div class="col-md-4"><div class="grid-column-box">col-md-4 (full width on small screens)</div></div>
+            </div>
+        </div>
+
+        <!-- Column Ordering -->
+        <div class="grid-example-section">
+            <h2>3. Column Ordering</h2>
+            
+            <div class="row">
+                <div class="col-md-4 order-md-last"><div class="grid-column-box order">First, but ordered last on MD+</div></div>
+                <div class="col-md-4"><div class="grid-column-box order">Second, default order</div></div>
+                <div class="col-md-4 order-md-first"><div class="grid-column-box order">Third, but ordered first on MD+</div></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4 order-last"><div class="grid-column-box order">Order Last</div></div>
+                <div class="col-4"><div class="grid-column-box order">Default Order</div></div>
+                <div class="col-4 order-first"><div class="grid-column-box order">Order First</div></div>
+            </div>
+        </div>
+
+        <!-- Offsetting Columns -->
+        <div class="grid-example-section">
+            <h2>4. Offsetting Columns</h2>
+            
+            <div class="row">
+                <div class="col-md-4"><div class="grid-column-box offset">col-md-4</div></div>
+                <div class="col-md-4 offset-md-4"><div class="grid-column-box offset">col-md-4 offset-md-4</div></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 offset-md-3"><div class="grid-column-box offset">col-md-6 offset-md-3 (centered)</div></div>
+            </div>
+        </div>
+
+        <!-- Nesting Columns -->
+        <div class="grid-example-section">
+            <h2>5. Nesting Columns</h2>
+            
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="grid-column-box">Level 1: col-sm-9</div>
+                    <div class="row">
+                        <div class="col-8"><div class="grid-column-box nested">Level 2: col-8</div></div>
+                        <div class="col-4"><div class="grid-column-box nested">Level 2: col-4</div></div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="grid-column-box">Level 1: col-sm-3</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auto-layout Columns -->
+        <div class="grid-example-section">
+            <h2>6. Auto-layout Columns (Equal Width)</h2>
+            
+            <div class="row">
+                <div class="col"><div class="grid-column-box auto">col</div></div>
+                <div class="col"><div class="grid-column-box auto">col</div></div>
+                <div class="col"><div class="grid-column-box auto">col</div></div>
+            </div>
+            
+            <div class="row">
+                <div class="col"><div class="grid-column-box auto">col</div></div>
+                <div class="col-6"><div class="grid-column-box auto">col-6</div></div>
+                <div class="col"><div class="grid-column-box auto">col</div></div>
+            </div>
+        </div>
+
+        <!-- Variable Width Content -->
+        <div class="grid-example-section">
+            <h2>7. Variable Width Content</h2>
+            
+            <div class="row">
+                <div class="col col-lg-2"><div class="grid-column-box variable">col</div></div>
+                <div class="col-auto"><div class="grid-column-box variable">Variable Width Content</div></div>
+                <div class="col col-lg-2"><div class="grid-column-box variable">col</div></div>
+            </div>
+        </div>
+
+        <!-- Gutters -->
+        <div class="grid-example-section">
+            <h2>8. Gutters (Horizontal and Vertical)</h2>
+            
+            <div class="row">
+                <div class="col-6"><div class="grid-column-box gutter-example">Col 1</div></div>
+                <div class="col-6"><div class="grid-column-box gutter-example">Col 2</div></div>
+                <div class="col-6"><div class="grid-column-box gutter-example">Col 3</div></div>
+                <div class="col-6"><div class="grid-column-box gutter-example">Col 4</div></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6"><div class="grid-column-box gutter-example">Col 1</div></div>
+                <div class="col-6"><div class="grid-column-box gutter-example">Col 2</div></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12"><div class="grid-column-box gutter-example">Col 1</div></div>
+                <div class="col-12"><div class="grid-column-box gutter-example">Col 2</div></div>
+            </div>
+        </div>
+
+    </div>

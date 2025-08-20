@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --darkHex:#206055ff;
+    --accent1Hex:#8E8EF9;
+    --accent2Hex:#F4ABF1;
+    --accent3Hex:#F9F995;
+    --lightHex:#99F9F1;
+
+    --darkHex:rgb(32, 95, 85);
+    --accent1Hex:rgb(142, 142, 249);
+    --accent2Hex:rgb(244, 171, 241);
+    --accent3Hex:rgb(249, 249, 149);
+    --lightHex:rgb(153, 249, 241);
+
+}
+body {
+    background-color: rgba(var(--lightRGB), 1) !important;
+    font-family: "Space Mono", monospace !important;
+}
+.text-dark {
+    color: var(--darkHex);
+}
+
+.text-accent1 {
+    color: var(--accent1Hex);
+}
+
+.text-accent2 {
+    color: var(--accent2Hex);
+}
+
+.text-accent3 {
+    color: var(--accent3Hex);
+}
+
+.text-light {
+    color: var(--lightHex);
+}
+
+.bg-dark {
+    background-color: var(--darkHex);
+}
+
+.bg-accent1{
+    background-color: var(--accent2Hex);
+}
+
+.bg-accent2 {
+    background-color: var(--accent2Hex);
+}
+
+.bg-accent3 {
+    background-color: var(--accent3Hex);
+}
+
+.bg-light {
+    background-color: var(--lightHex);
+}
