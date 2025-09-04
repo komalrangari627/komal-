@@ -1,18 +1,15 @@
-let e2 = document.getElementById("e2");
-let button = document.getElementById("btn1");
+ let e2 = document.getElementById("e2");
+    let originalClasses = "size";
 
-function toggleBorderAndBackground() {
-    if (e2.classList.contains("active")) {
-        // remove styles
-        e2.classList.remove("active");
-        e2.style.border = "none";
-        e2.style.backgroundColor = "transparent";
-    } else {
-        // add styles
-        e2.classList.add("active");
-        e2.style.border = "2px solid black";
-        e2.style.backgroundColor = "lightblue";
+    function addBorder() {
+      let hasBorder = e2.classList.contains("border");
+      if (hasBorder) {
+        // Reset back to original
+        e2.className = originalClasses;
+      } else {
+        // Add border + increase size
+        e2.className = originalClasses + " border big";
+      }
     }
-}
 
-button.addEventListener("click", toggleBorderAndBackground);
+    document.getElementById("btn1").addEventListener("click", addBorder);

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Class with dataset</title>
+  <style>
+    .highlight {
+      background: yellow;
+      color: red;
+      font-weight: bold;
+      padding: 5px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="e1">Hello, I am Heading 1</h2>
+  <h2 id="e2">Hello, I am Heading 2</h2>
+
+  <!-- Buttons with dataset attributes -->
+  <button 
+    data-target-element="#e1" 
+    data-toggle-class="highlight" 
+    onclick="toggleClass(event)">
+    Toggle Heading 1
+  </button>
+
+  <button 
+    data-target-element="#e2" 
+    data-toggle-class="highlight" 
+    onclick="toggleClass(event)">
+    Toggle Heading 2
+  </button>
+
+  <!-- Link external JavaScript -->
+  <script src="script1.js"></script>
+</body>
+</html>
