@@ -97,5 +97,6 @@ if (org_number == rev) {
 //Odd numbers from 0 → 1000
 
 for (let number1 = 0; number1 <= 1000; number1++) {
-    if (number1 % 2 != 0) console.log(number1);
+    if (number1 % 2 != 0)
+     console.log(number1);
 }

@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  text-align: center;
+  padding: 2rem;
+}
+h1 {
+  margin-bottom: 1.5rem;
+}
+.comparison-container {
+  position: relative;
+  width: 800px;
+  max-width: 95%;
+  margin: auto;
+}
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.img-wrapper img {
+  display: block;
+  width: 100%;
+}
+.after-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+.after-img img {
+  width: 100%;
+}
+.slider {
+  width: 100%;
+  margin-top: 1rem;
+}
+.slider::-webkit-slider-thumb {
+  background: #2563eb;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
