@@ -1,0 +1,70 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid Parent */
+.parent {
+  width: 80%;
+  height: 100%;
+  margin: 1rem auto;
+  padding: 3rem;
+  border: 1px solid brown;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Child items */
+.child {
+  background-color: blueviolet;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  filter: grayscale(1);
+  transition: all 0.5s ease;
+}
+
+.child:hover {
+  filter: grayscale(0);
+}
+
+/* Responsive: Tablet */
+@media screen and (max-width: 990px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: Mobile */
+@media screen and (max-width: 576px) {
+  .parent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Image grayscale hover */
+img {
+  filter: grayscale(1);
+  transition: all 0.5s ease;
+  margin: 20%;
+}
+
+img:hover {
+  filter: grayscale(0);
+}
+
+/* Centered blue square */
+.element {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  background-color: blueviolet;
+  transform: translateX(-50%) translateY(-50%) scale(0.5, 0.5);
+}

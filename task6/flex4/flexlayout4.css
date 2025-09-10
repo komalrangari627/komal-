@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: #fff3e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.layout4 {
+  display: flex;
+  gap: 1rem;
+}
+
+.layout4 .first {
+  order: 3;
+  background-color: #f44336;
+}
+
+.layout4 .second {
+  order: 1;
+  background-color: #2196f3;
+}
+
+.layout4 .third {
+  order: 2;
+  background-color: #ff9800;
+}
+
+.layout4 div {
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}

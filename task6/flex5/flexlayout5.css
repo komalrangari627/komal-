@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: #ede7f6;
+}
+
+.layout5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.layout5 div {
+  flex: 0 0 22%;
+  padding: 2rem;
+  background-color: #673ab7;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Responsive for tablets */
+@media (max-width: 768px) {
+  .layout5 div {
+    flex: 0 0 45%;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+  .layout5 div {
+    flex: 0 0 100%;
+  }
+}

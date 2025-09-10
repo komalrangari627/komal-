@@ -1,3 +1,15 @@
+/* Reset and base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 /* Container uses calc() for dynamic spacing */
 .container {
   width: calc(100% - 60px);
@@ -7,41 +19,54 @@
   position: relative;
   background: linear-gradient(135deg, #f0f0f0, #c0c0ff);
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Box uses animation with repeat and timing function */
+/* Box with pure CSS animation */
 .box {
   width: 100px;
   height: 100px;
   background-color: #4caf50;
   color: white;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: calc(50% - 50px);
-  /* Vertically center using calc */
-  animation-name: move;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  top: calc(50% - 50px); /* vertical center using calc */
+  border-radius: 16px;
+  cursor: pointer;
+
+  /* Animation */
+  animation: move 3s ease-in-out infinite alternate;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Keyframes animation */
+/* Keyframes for left-right movement */
 @keyframes move {
-  0% {
+  from {
     left: 0;
   }
-
-  50% {
+  to {
     left: calc(100% - 100px);
   }
-
-  100% {
-    left: 0;
-  }
 }
-/* Responsive design for smaller screens */
+
+/* Hover effect */
+.box:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Focus effect (when tabbed) */
+.box:focus {
+  outline: 2px solid #ff9800;
+  outline-offset: 4px;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.6);
+}
+
+/* Responsive design */
 @media (max-width: 600px) {
   .container {
     width: calc(100% - 20px);
@@ -54,16 +79,4 @@
     height: 80px;
     font-size: 14px;
   }
-}
-/* Additional styles for hover effect */
-.box:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
-    transition: background-color 0.3s, transform 0.3s;
-    }
-/* Additional styles for focus effect */
-.box:focus {
-    outline: 2px solid #ff9800;
-    outline-offset: 4px;
-    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
 }

@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6; /* calm background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container with animated background */
+.container {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 16px;
+  max-width: 700px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  z-index: 1;
+
+  /* Background animation (pattern + rainbow gradient) */
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff 0,
+      #ffffff 10px,
+      #e0e0e0 10px,
+      #e0e0e0 20px
+    ),
+    linear-gradient(
+      270deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      red
+    );
+
+  background-blend-mode: overlay;
+  background-size: 200% 200%, 600% 600%;
+  background-position: 0 0, 0% 50%;
+
+  animation: movePattern 12s linear infinite,
+             rainbowShift 20s linear infinite;
+}
+
+/* Glowing rainbow border */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -5px; /* expand outside */
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 400% 100%;
+  animation: rainbowBorder 8s linear infinite;
+  filter: blur(12px);
+  z-index: -1;
+}
+
+/* Pattern slides diagonally */
+@keyframes movePattern {
+  0% { background-position: 0 0, 0% 50%; }
+  100% { background-position: 200px 200px, 0% 50%; }
+}
+
+/* Rainbow gradient shifts */
+@keyframes rainbowShift {
+  0% { background-position: 0 0, 0% 50%; }
+  50% { background-position: 200px 200px, 100% 50%; }
+  100% { background-position: 0 0, 0% 50%; }
+}
+
+/* Rainbow glowing border animation */
+@keyframes rainbowBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Rainbow text */
+.rainbow-text {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 10s linear infinite;
+}
+
+/* Animate gradient inside text */
+@keyframes rainbowText {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Paragraph text */
+.container p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}

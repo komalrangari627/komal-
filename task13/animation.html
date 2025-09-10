@@ -1,74 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .element{
-            width: 300px;
-            height: 300px;
-            position: relative;
-            left: 0;
-            background-color: aqua;
-            transition: all 2s ease;
-            animation-name: animation1;
-            animation-timing-function: linear;
-            animation-duration: 5s;
-            animation-iteration-count: 7;
-        }
-        @keyframes  circles{
-            0%{
-                background-color: aqua;
-                left: 0;
-            }
-            50%{
-                background-color: pink;
-                left: 50%;
-            }
-            100%{
-                background-color: red;
-                left: 100%;
-            }
-        }
-        .circle{
-            width:100px ;
-            height: 100px;
-            position: relative;
-            left: 0;
-            margin: 1rem auto;
-            animation-name:circles;
-            animation-timing-function: linear;
-            animation-duration: 13s;
-            animation-iteration-count: infinite;
-            animation-delay: 2s;
-           
-        }
-        .circle1{
-            animation-iteration-count: 1;
-        }
-        .circle2{
-            animation-iteration-count: 1;
-        }
-        .circle3{
-            animation-iteration-count: 1;
-        }
-        .circle4{
-            animation-iteration-count: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Circles</title>
+  <link rel="stylesheet" href="animation.css">
 </head>
 <body>
-    <!--<div class="element">
-       
-    </div>-->
-   <div class="circle circle1"></div>
-   <div class="circle circle2"></div>
-    <div class="circle circle3"></div>
-    <div class="circle circle4"></div>
+  <!-- Animated Circles -->
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+  <div class="circle circle4"></div>
 </body>
-</html> 
+</html>

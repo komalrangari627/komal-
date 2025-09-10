@@ -1,0 +1,54 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Circle animation */
+.circle {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 0;
+  margin: 1rem auto;
+  animation-name: circles;
+  animation-timing-function: linear;
+  animation-duration: 13s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  background-color: aqua;
+  border-radius: 50%;
+}
+
+/* Individual circle overrides */
+.circle1 {
+  animation-iteration-count: 1;
+}
+
+.circle2 {
+  animation-iteration-count: 1;
+}
+
+.circle3 {
+  animation-iteration-count: 1;
+}
+
+.circle4 {
+  animation-iteration-count: 1;
+}
+
+/* Keyframes for movement and color change */
+@keyframes circles {
+  0% {
+    background-color: aqua;
+    left: 0;
+  }
+  50% {
+    background-color: pink;
+    left: 50%;
+  }
+  100% {
+    background-color: red;
+    left: 100%;
+  }
+}

@@ -1,128 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradients & Background Shorthand</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: "Inter", sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            padding: 2rem;
-            min-height: 100vh;
-        }
-        .gradient-box {
-            height: 150px;
-            width: 100%;
-            border-radius: 0.75rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.25rem; /* text-xl */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* For better text visibility on gradients */
-        }
-        .section-title {
-            font-size: 1.75rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            color: #1f2937; /* text-gray-900 */
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .sub-section-title {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 600; /* font-semibold */
-            color: #374151; /* text-gray-800 */
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Gradient Text & Background</title>
+  <link rel="stylesheet" href="index.css">
 </head>
-<body class="p-4 bg-gray-100">
-
-    <div class="container mx-auto max-w-4xl bg-white p-8 rounded-xl shadow-xl">
-        <h1 class="section-title mb-8">CSS Gradients and Background Shorthand Examples</h1>
-
-        <!-- Linear Gradients Section -->
-        <h2 class="sub-section-title">Linear Gradients</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Linear Gradient: Top to Bottom -->
-            <div class="gradient-box bg-gradient-to-b from-blue-500 to-purple-600">
-                Linear (Top to Bottom)
-            </div>
-
-            <!-- Linear Gradient: Left to Right -->
-            <div class="gradient-box bg-gradient-to-r from-green-400 to-blue-500">
-                Linear (Left to Right)
-            </div>
-
-            <!-- Linear Gradient: Diagonal (Top-Left to Bottom-Right) -->
-            <div class="gradient-box bg-gradient-to-br from-yellow-400 to-red-500">
-                Linear (Diagonal)
-            </div>
-
-            <!-- Linear Gradient: With multiple color stops -->
-            <div class="gradient-box bg-gradient-to-r from-red-500 via-yellow-500 to-green-500">
-                Linear (Multi-stop)
-            </div>
-        </div>
-
-        <!-- Radial Gradients Section -->
-        <h2 class="sub-section-title">Radial Gradients</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Radial Gradient: Simple Circle -->
-            <div class="gradient-box" style="background: radial-gradient(circle, #ff7e5f, #feb47b);">
-                Radial (Circle)
-            </div>
-
-            <!-- Radial Gradient: Ellipse -->
-            <div class="gradient-box" style="background: radial-gradient(ellipse at center, #a8e063, #56ab2f);">
-                Radial (Ellipse)
-            </div>
-
-            <!-- Radial Gradient: With multiple color stops -->
-            <div class="gradient-box" style="background: radial-gradient(circle at top left, #4facfe, #00f2fe, #43e97b);">
-                Radial (Multi-stop, positioned)
-            </div>
-
-            <!-- Radial Gradient: With size keyword -->
-            <div class="gradient-box" style="background: radial-gradient(farthest-corner at 10% 10%, #ee9ca7, #ffdde1);">
-                Radial (Farthest Corner)
-            </div>
-        </div>
-        <!-- Background Shorthand Property Section -->
-        <h2 class="sub-section-title">Background Shorthand Property</h2>
-        <p class="text-gray-700 mb-4">
-            The `background` shorthand property allows you to combine multiple background properties into one declaration.
-            It can include `background-color`, `background-image`, `background-repeat`, `background-attachment`,
-            `background-position`, and `background-size`.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Background Shorthand: Color and Image -->
-            <div class="gradient-box" style="background: url('https://placehold.co/150x150/E0F2F7/2C3E50?text=Image') center / contain no-repeat, linear-gradient(to right, #6dd5ed, #2193b0);">
-                Background Shorthand (Image + Linear Gradient)
-            </div>
-
-            <!-- Background Shorthand: Color and Radial Gradient -->
-            <div class="gradient-box" style="background: radial-gradient(circle at bottom right, #f7b731, #f7b731 20%, #fc4a1a 80%), #f0f0f0;">
-                Background Shorthand (Radial Gradient + Color)
-            </div>
-
-            <!-- Background Shorthand: Multiple Backgrounds (Image + Image) -->
-            <div class="gradient-box" style="background: url('https://placehold.co/50x50/FFDDC1/FF6B6B?text=A') top left / 50px 50px no-repeat, url('https://placehold.co/50x50/D1FFC1/6B6BFF?text=B') bottom right / 50px 50px no-repeat, #f8f8f8;">
-                Background Shorthand (Multiple Images)
-            </div>
-
-            <!-- Background Shorthand: Pattern with repeating gradient -->
-            <div class="gradient-box" style="background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px);">
-                Repeating Linear Gradient (Pattern)
-            </div>
-        </div>
-    </div>
-
+<body>
+  <div class="container">
+    <h1 class="rainbow-text">Rainbow Wave + Moving Pattern</h1>
+    <p>
+      Pattern slides diagonally, background shifts colors, and now the
+      <strong>text</strong> shines with a rainbow animation 🌈
+    </p>
+  </div>
 </body>
 </html>
