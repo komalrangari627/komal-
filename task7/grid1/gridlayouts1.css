@@ -1,0 +1,15 @@
+:root { --gap: 12px; }
+body { font-family: system-ui, Segoe UI, Roboto, Arial; margin: 24px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--gap);
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.card h3 { margin: 0 0 8px; font-size: 1.05rem; color: #0d6efd; }
+.card p { margin: 0; color: #444; font-size: .95rem; }

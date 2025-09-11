@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  padding: 2rem;
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.sub-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: #374151;
+}
+
+.description {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Grid layout for examples */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Flexbox Containers */
+.flex-container {
+  border: 2px dashed #a78bfa;
+  background: #ede9fe;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 120px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Flexbox variations */
+.flex-start { align-items: flex-start; }
+.flex-end   { align-items: flex-end; }
+.flex-center{ align-items: center; }
+.flex-stretch { align-items: stretch; }
+
+/* Flex Items */
+.flex-item {
+  background: #8b5cf6;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 40px;
+}

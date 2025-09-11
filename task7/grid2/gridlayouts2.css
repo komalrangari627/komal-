@@ -1,0 +1,23 @@
+body { font-family: system-ui; margin: 24px; background: #f6f7fb; }
+.mag {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.featured {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.side { display: grid; gap: 12px; }
+.item {
+  background: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+}
+@media (max-width: 800px) {
+  .mag { grid-template-columns: 1fr; }
+}

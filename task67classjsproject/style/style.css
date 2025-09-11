@@ -53,3 +53,8 @@
   font-size: .85rem;
   color: #6c757d;
 }
+
+.action {
+  text-align: center;
+  margin: 20px 0;
+}

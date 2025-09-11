@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Outline & Placeholder</title>
+  <link rel="stylesheet" href="outline.css">
+</head>
+<body>
+  <!-- CSS Outline Property Section -->
+  <h1 class="section-title">CSS Outline Property</h1>
+  <p class="section-description">
+    The <code>outline</code> property draws a line around elements, outside the border.
+    It is <em>not</em> part of the box model and does not take up space.
+    It's often used for accessibility (e.g., focus indicators).
+  </p>
+
+  <div class="two-column">
+    <div>
+      <h2 class="sub-section-title">outline-style and outline-width</h2>
+      <div class="outline-box outline-dashed">Dashed Outline (3px)</div>
+      <div class="outline-box outline-solid">Solid Outline (4px)</div>
+      <div class="outline-box outline-dotted">Dotted Outline (2px)</div>
+    </div>
+
+    <div>
+      <h2 class="sub-section-title">outline-color and Shorthand</h2>
+      <div class="outline-box outline-blue">Blue Solid Outline</div>
+      <div class="outline-box outline-red">Red Double Outline</div>
+      <div class="outline-box outline-yellow">Yellow Groove Outline</div>
+    </div>
+  </div>
+
+  <!-- ::placeholder Pseudo-element Section -->
+  <h1 class="section-title">::placeholder Pseudo-element</h1>
+  <p class="section-description">
+    The <code>::placeholder</code> pseudo-element allows you to style the placeholder text of
+    <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> elements.
+  </p>
+
+  <div class="two-column">
+    <div>
+      <h2 class="sub-section-title">Default Placeholder Styling</h2>
+      <input type="text" class="placeholder-input" placeholder="Enter your name here...">
+      <textarea class="placeholder-input" placeholder="Write your message..."></textarea>
+    </div>
+
+    <div>
+      <h2 class="sub-section-title">Custom Placeholder Styling</h2>
+      <input type="email" class="placeholder-input custom-placeholder" placeholder="Your Email (Required)">
+      <input type="password" class="placeholder-input custom-placeholder" placeholder="Password (Min 8 chars)">
+    </div>
+  </div>
+</body>
+</html>

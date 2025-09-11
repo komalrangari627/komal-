@@ -1,223 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradients & Background Shorthand</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: "Inter", sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            padding: 2rem;
-            min-height: 100vh;
-        }
-        .gradient-box {
-            height: 150px;
-            width: 100%;
-            border-radius: 0.75rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.25rem; /* text-xl */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* For better text visibility on gradients */
-        }
-        .section-title {
-            font-size: 1.75rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            color: #1f2937; /* text-gray-900 */
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .sub-section-title {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 600; /* font-semibold */
-            color: #374151; /* text-gray-800 */
-            margin-bottom: 1rem;
-            margin-top: 1.5rem;
-        }
-        .flex-container {
-            border: 2px dashed #a78bfa; /* purple-400 */
-            background-color: #ede9fe; /* purple-100 */
-            border-radius: 0.5rem; /* rounded-md */
-            padding: 1rem;
-            min-height: 120px;
-            display: flex;
-            gap: 0.5rem; /* space-x-2 */
-            margin-bottom: 1rem;
-        }
-        .flex-item {
-            background-color: #8b5cf6; /* violet-500 */
-            color: white;
-            padding: 0.75rem 1rem; /* p-3 px-4 */
-            border-radius: 0.375rem; /* rounded-md */
-            font-weight: 500; /* font-medium */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 60px; /* To make items visible */
-        }
-        /* Custom styles for Grid */
-        .grid-container {
-            border: 2px dashed #60a5fa; /* blue-400 */
-            background-color: #dbeafe; /* blue-100 */
-            border-radius: 0.5rem; /* rounded-md */
-            padding: 1rem;
-            display: grid;
-            gap: 1rem; /* gap-4 */
-            margin-bottom: 1rem;
-        }
-        .grid-item {
-            background-color: #3b82f6; /* blue-500 */
-            color: white;
-            padding: 0.75rem 1rem; /* p-3 px-4 */
-            border-radius: 0.375rem; /* rounded-md */
-            font-weight: 500; /* font-medium */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        /* Specific grid area styling for Layout 4 */
-        .grid-layout-areas {
-            grid-template-areas:
-                "header header header"
-                "sidebar main main"
-                "footer footer footer";
-            grid-template-columns: 1fr 2fr 2fr;
-            grid-template-rows: auto 1fr auto;
-            min-height: 250px;
-        }
-        .grid-header { grid-area: header; background-color: #ef4444; } /* red-500 */
-        .grid-sidebar { grid-area: sidebar; background-color: #f97316; } /* orange-500 */
-        .grid-main { grid-area: main; background-color: #22c55e; } /* green-500 */
-        .grid-footer { grid-area: footer; background-color: #3b82f6; } /* blue-500 */
-        /* Custom styles for Intro Cards */
-        .card {
-            background-color: #ffffff;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-            padding: 1.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .card-icon {
-            font-size: 3rem; /* text-5xl */
-            margin-bottom: 1rem;
-            color: #4f46e5; /* indigo-600 */
-        }
-        .card-title {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: 700; /* font-bold */
-            color: #1f2937; /* text-gray-900 */
-            margin-bottom: 0.5rem;
-        }
-        .card-description {
-            font-size: 0.875rem; /* text-sm */
-            color: #4b5563; /* text-gray-700 */
-            line-height: 1.5;
-        }
-        /* Custom styles for Positioning */
-        .positioning-container {
-            border: 2px dashed #fbbf24; /* amber-400 */
-            background-color: #fffbeb; /* amber-50 */
-            border-radius: 0.5rem; /* rounded-md */
-            padding: 1rem;
-            margin-bottom: 1rem;
-            position: relative; /* For absolute positioning context */
-            min-height: 200px; /* Ensure enough height for positioning */
-        }
-        .positioning-item {
-            background-color: #f59e0b; /* amber-500 */
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem; /* rounded-md */
-            font-weight: 500;
-            text-align: center;
-            width: 100px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        .sticky-header {
-            background-color: #10b981; /* emerald-500 */
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0; /* Sticks to the top of the viewport */
-            z-index: 10; /* Ensure it stays on top */
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Positioning Examples</title>
+  <link rel="stylesheet" href="position.css">
 </head>
-<body class="p-4 bg-gray-100">
-     <!-- Positioning Example 1: Static (Default) -->
-        <h2 class="sub-section-title">1. `position: static;` (Default)</h2>
-        
-        <div class="positioning-container">
-            <div class="positioning-item">Static Item 1</div>
-            <div class="positioning-item mt-4">Static Item 2</div>
-        </div>
+<body>
+  <h1 class="section-title">CSS Positioning Examples</h1>
 
-        <!-- Positioning Example 2: Relative -->
-        <h2 class="sub-section-title">2. `position: relative;`</h2>
-       
-        <div class="positioning-container">
-            <div class="positioning-item relative top-4 left-4">Relative Item</div>
-            <div class="positioning-item mt-4">Normal Flow Item</div>
-        </div>
+  <!-- 1. Static -->
+  <h2 class="sub-section-title">1. position: static (Default)</h2>
+  <div class="positioning-container">
+    <div class="positioning-item">Static Item 1</div>
+    <div class="positioning-item">Static Item 2</div>
+  </div>
 
-        <!-- Positioning Example 3: Absolute -->
-        <h2 class="sub-section-title">3. `position: absolute;`</h2>
-       
-        <div class="positioning-container">
-            <div class="positioning-item absolute top-4 right-4">Absolute Item</div>
-            <div class="positioning-item">Normal Flow Item 1</div>
-            <div class="positioning-item mt-4">Normal Flow Item 2</div>
-        </div>
+  <!-- 2. Relative -->
+  <h2 class="sub-section-title">2. position: relative</h2>
+  <div class="positioning-container">
+    <div class="positioning-item relative-example">Relative Item</div>
+    <div class="positioning-item">Normal Flow Item</div>
+  </div>
 
-        <!-- Positioning Example 4: Fixed -->
-        <h2 class="sub-section-title">4. `position: fixed;`</h2>
-        
-        <div class="positioning-container min-h-[300px] overflow-hidden">
-            <p class="text-gray-700 mb-2">Scroll down to see the fixed item behavior.</p>
-            <div class="positioning-item fixed bottom-4 right-4 z-20">Fixed Item</div>
-            <div class="h-48 bg-gray-200 rounded-md flex items-center justify-center text-gray-600">
-                (Scrollable content below)
-            </div>
-            <div class="h-48 bg-gray-300 rounded-md flex items-center justify-center text-gray-700 mt-4">
-                More content to enable scrolling
-            </div>
-        </div>
+  <!-- 3. Absolute -->
+  <h2 class="sub-section-title">3. position: absolute</h2>
+  <div class="positioning-container absolute-parent">
+    <div class="positioning-item absolute-example">Absolute Item</div>
+    <div class="positioning-item">Normal Flow Item 1</div>
+    <div class="positioning-item">Normal Flow Item 2</div>
+  </div>
 
-        <!-- Positioning Example 5: Sticky -->
-        <h2 class="sub-section-title">5. `position: sticky;`</h2>
-        
-        <div class="h-[400px] bg-gray-100 p-4 overflow-y-scroll border-2 border-gray-300 rounded-md">
-            <div class="h-24 bg-blue-200 mb-4 rounded-md flex items-center justify-center text-gray-700">
-                Scroll down past this point
-            </div>
-            <div class="sticky-header">Sticky Header (Sticks at top: 0)</div>
-            <div class="h-96 bg-green-200 mt-4 rounded-md flex items-center justify-center text-gray-700">
-                More content to scroll past the sticky item
-            </div>
-            <div class="h-96 bg-yellow-200 mt-4 rounded-md flex items-center justify-center text-gray-700">
-                Even more content
-            </div>
-        </div>
+  <!-- 4. Fixed -->
+  <h2 class="sub-section-title">4. position: fixed</h2>
+  <div class="positioning-container tall-box">
+    <p>Scroll down to see the fixed item behavior.</p>
+    <div class="positioning-item fixed-example">Fixed Item</div>
+    <div class="filler">Scrollable Content 1</div>
+    <div class="filler">Scrollable Content 2</div>
+  </div>
 
-    </div>
-
+  <!-- 5. Sticky -->
+  <h2 class="sub-section-title">5. position: sticky</h2>
+  <div class="scroll-box">
+    <div class="filler">Scroll down past this point</div>
+    <div class="sticky-header">Sticky Header</div>
+    <div class="filler green">More content to scroll</div>
+    <div class="filler yellow">Even more content</div>
+  </div>
 </body>
 </html>

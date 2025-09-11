@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Aspect Ratio Examples</title>
+  <link rel="stylesheet" href="aspectration.css">
+</head>
+<body>
+  <h1 class="section-title">CSS Aspect Ratio</h1>
+
+  <!-- Padding-bottom Hack -->
+  <h2 class="sub-section-title">1. Using the padding-bottom Hack (Older Method)</h2>
+  <div class="grid">
+    <div>
+      <p class="label">16:9 Aspect Ratio (Video)</p>
+      <div class="aspect-ratio-container aspect-ratio-16x9">
+        <div class="aspect-ratio-content-overlay">
+          <iframe src="https://www.Video.com/embed/dQw4w9WgXcQ?controls=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="label">4:3 Aspect Ratio (Image)</p>
+      <div class="aspect-ratio-container aspect-ratio-4x3">
+        <div class="aspect-ratio-content-overlay">
+          <img src="https://placehold.co/400x300/F0F8FF/333333?text=4x3+Image" alt="4x3 Placeholder">
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="label">1:1 Aspect Ratio (Square)</p>
+      <div class="aspect-ratio-container aspect-ratio-1x1">
+        <div class="aspect-ratio-content-overlay square-content">
+          Square Content
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modern Aspect Ratio -->
+  <h2 class="sub-section-title">2. Using the aspect-ratio CSS Property (Modern Method)</h2>
+  <div class="grid">
+    <div>
+      <p class="label">aspect-ratio: 16 / 9;</p>
+      <div class="aspect-ratio-container aspect-ratio-native-16x9">
+        <div class="aspect-ratio-native-content">Video Placeholder</div>
+      </div>
+    </div>
+    <div>
+      <p class="label">aspect-ratio: 4 / 3;</p>
+      <div class="aspect-ratio-container aspect-ratio-native-4x3">
+        <div class="aspect-ratio-native-content">Image Placeholder</div>
+      </div>
+    </div>
+    <div>
+      <p class="label">aspect-ratio: 1 / 1;</p>
+      <div class="aspect-ratio-container aspect-ratio-native-1x1">
+        <div class="aspect-ratio-native-content">Square Placeholder</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

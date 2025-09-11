@@ -1,0 +1,21 @@
+body { font-family: system-ui; margin: 0; background: #eef2f6; }
+.wrap {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "sidebar header" "sidebar main";
+  height: 100vh;
+}
+header { grid-area: header; background: #fff; padding: 12px 20px; border-bottom: 1px solid #eee; }
+nav { grid-area: sidebar; background: #0d6efd; color: #fff; padding: 16px; }
+main { grid-area: main; padding: 20px; overflow: auto; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.card { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,.04); }
+@media (max-width: 700px) {
+  .wrap { grid-template-columns: 1fr; grid-template-areas: "header" "main"; grid-template-rows: 60px auto; }
+  nav { display: none; }
+}

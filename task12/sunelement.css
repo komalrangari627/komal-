@@ -1,0 +1,42 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6; /* light gray */
+  padding: 2rem;
+  min-height: 100vh;
+}
+.section-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Sun container (sky effect) */
+.sun-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background-color: #e0f2fe; /* light blue */
+  border-radius: 0.75rem;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Sun element */
+.sun-element {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #ffeb3b, #ffc107);
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 200, 0, 0.8);
+  animation: pulse 2s infinite alternate;
+}
+
+/* Animation for glowing/pulsing sun */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}

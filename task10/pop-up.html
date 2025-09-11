@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure CSS Pop-up Modal</title>
+  <link rel="stylesheet" href="pop-up.css">
+</head>
+<body>
+  <h1 class="section-title">Pop-up Modal</h1>
+  <p class="section-description">
+    This example demonstrates a simple pop-up (modal) created using only HTML and CSS.
+  </p>
+
+  <!-- Open Modal Button -->
+  <a href="#myModal" class="btn">Open Pop-up</a>
+
+  <!-- Modal Structure -->
+  <div id="myModal" class="modal-overlay">
+    <div class="modal-content">
+      <a href="#" class="modal-close">&times;</a>
+      <h2>Welcome to the Pop-up!</h2>
+      <p>
+        This is a simple modal dialog created with HTML and CSS only, using the <code>:target</code> trick.
+      </p>
+      <a href="#" class="btn confirm-btn">Got It!</a>
+    </div>
+  </div>
+</body>
+</html>
