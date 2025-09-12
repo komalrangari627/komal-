@@ -15,12 +15,49 @@
     <script src="./vendors/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- fontawesome -->
-    <link rel="stylesheet" href="./vendors/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./vendors/fontawesome-free-7.0.0-web/css/all.css">
+  
+      <style>
+    body {
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
 
-   <!--style css-->
-  <link rel="stylesheet" href="style.css">
+    .container-clock {
+      width: 80%;
+      text-align: center;
+    }
 
+    /* Clock Text Mask */
+    .clock-mask {
+      font-size: 8rem;
+      font-weight: bold;
+      color: transparent;
+      background: url("./media/clock.jpeg") no-repeat center center;
+      background-size: cover;
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 10rem;
+    }
+
+    .clock-display {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
+ <div class="container-clock">
+
+    <!-- Clock Text Mask -->
+    <h1 class="clock-mask">CLOCK</h1>
+
+      <!-- Carousel: Digital Clock | Stopwatch | Countdown -->
 <body class="bg-dark text-light d-flex justify-content-center align-items-center vh-100">
 
   <div id="timeCarousel" class="carousel slide w-75" data-bs-ride="false">
