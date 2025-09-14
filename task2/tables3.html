@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            padding: 2rem;
+        }
+        .table-container {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            margin-bottom: 2rem; /* Space between tables */
+            overflow-x: auto; /* For responsive tables on small screens */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
+        }
+        th {
+            background-color: #f9fafb; /* bg-gray-50 */
+            font-weight: 600; /* font-semibold */
+            color: #374151; /* text-gray-700 */
+            text-transform: uppercase;
+            font-size: 0.75rem; /* text-xs */
+            letter-spacing: 0.05em; /* tracking-wider */
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f3f4f6; /* bg-gray-100 on hover */
+        }
+    </style>
+</head>
+<body class="p-4 bg-gray-100 min-h-screen">
+<!-- Table 3: User List Table -->
+    <div class="table-container p-6">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">3. User List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>U001</td>
+                    <td>john_doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>U002</td>
+                    <td>jane_smith</td>
+                    <td>jane.smith@example.com</td>
+                    <td>Inactive</td>
+                </tr>
+                <tr>
+                    <td>U003</td>
+                    <td>mike_jones</td>
+                    <td>mike.jones@example.com</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>U004</td>
+                    <td>sara_connor</td>
+                    <td>sara.connor@example.com</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>U005</td>
+                    <td>david_lee</td>
+                    <td>david.lee@example.com</td>
+                    <td>Active</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
