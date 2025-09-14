@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table with Caption and Colspan</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 70%;
+  }
+  th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+  }
+  th {
+    background-color: #a3d9ff;
+    color: #000;
+  }
+  caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+  <table>
+    <caption>Quarterly Sales Report</caption>
+    <thead>
+      <tr>
+        <th colspan="2">Q1 Sales</th>
+        <th colspan="2">Q2 Sales</th>
+      </tr>
+      <tr>
+        <th>Region</th>
+        <th>Revenue</th>
+        <th>Region</th>
+        <th>Revenue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>North America</td>
+        <td>$125,000</td>
+        <td>North America</td>
+        <td>$130,000</td>
+      </tr>
+      <tr>
+        <td>Europe</td>
+        <td>$89,000</td>
+        <td>Europe</td>
+        <td>$92,500</td>
+      </tr>
+      <tr>
+        <td>Asia</td>
+        <td>$75,000</td>
+        <td>Asia</td>
+        <td>$81,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
