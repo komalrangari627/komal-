@@ -24,3 +24,10 @@ body {
 input {
   text-align: center;
 }
+#alarmList .list-group-item {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  margin-bottom: 5px;
+  border-radius: 6px;
+}
