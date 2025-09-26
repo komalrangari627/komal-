@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clock | Stopwatch | Countdown</title>
-  <link rel="stylesheet" href="./style/style.css">
-
-    <!-- bootstarp css -->
+  <title>Clock | Stopwatch | Countdown | Alarm</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./vendors/bootstrap-5.3.7-dist/css/bootstrap.css">
-
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- bootstarp js -->
+      <!-- Bootstrap JS -->
     <script src="./vendors/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- fontawesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="./vendors/fontawesome-free-7.0.0-web/css/all.css">
-  
-      <style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
     body {
       background: #111;
       color: #fff;
@@ -29,7 +24,7 @@
     }
 
     .container-clock {
-      width: 80%;
+      width: 20%;
       text-align: center;
     }
 
@@ -52,72 +47,86 @@
     }
   </style>
 </head>
- <div class="container-clock">
+<body class="text-light">
+  <!-- Background Layer -->
+<div id="themeBackground"></div>
 
-    <!-- Clock Text Mask -->
-    <h1 class="clock-mask">CLOCK</h1>
+    <!-- Clock Mask Box -->
+     <div class="clock-mask-box">
+      <div class="clock-mask">CLOCK</div>
+      </div>
 
-      <!-- Carousel: Digital Clock | Stopwatch | Countdown -->
-<body class="bg-dark text-light d-flex justify-content-center align-items-center vh-100">
+     <!-- Falling Theme Buttons -->
+      <div class="theme-box">
+  <h5 class="m-0 p-0">Choose Theme:</h5>
+  <div class="theme-buttons">
+    <button class="btn btn-outline-primary" onclick="setTheme('balloon')">🎈 Balloons</button>
+    <button class="btn btn-outline-warning" onclick="setTheme('star')">⭐ Stars</button>
+    <button class="btn btn-outline-success" onclick="setTheme('flower')">🌸 Petals</button>
+    <button class="btn btn-outline-info" onclick="setTheme('playful')">🎨 Colors</button>
+  </div>
+</div>
 
-  <div id="timeCarousel" class="carousel slide w-75" data-bs-ride="false">
-    <div class="carousel-inner">
-
-     <!-- Digital Clock -->
-<div class="carousel-item active text-center" data-bg="linear-gradient(135deg, #0f2027, #203a43, #2c5364)">
+    <!-- Carousel -->
+    <div id="timeCarousel" class="carousel slide carousel-box" data-bs-ride="false">
+      <div class="carousel-inner">
+       <!-- Digital Clock -->
+<div class="carousel-item active text-center" data-bg="url('./media/bolloon.jpeg') no-repeat center center / cover">
   <h2 class="mb-4">🕒 Digital Clock</h2>
   <div id="digitalClock" class="clock-display"></div>
 </div>
 
-<!-- Stopwatch -->
-<div class="carousel-item text-center" data-bg="linear-gradient(135deg, #1e3c72, #2a5298)">
+        <!-- Stopwatch -->
+      <div class="carousel-item text-center" 
+      data-bg="url('./media/star.jpeg') no-repeat center center / cover">
   <h2 class="mb-4">⏱ Stopwatch</h2>
-  <div id="stopwatchDisplay" class="clock-display">00:00:00</div>
-  <div class="mt-3">
-    <button id="startStopwatch" class="btn btn-success me-2">Start</button>
-    <button id="pauseStopwatch" class="btn btn-warning me-2">Pause</button>
-    <button id="resetStopwatch" class="btn btn-danger">Reset</button>
-  </div>
-</div>
+          <div id="stopwatchDisplay" class="clock-display">00:00:00</div>
+          <div class="mt-3">
+            <button id="startStopwatch" class="btn btn-success me-2">Start</button>
+            <button id="pauseStopwatch" class="btn btn-warning me-2">Pause</button>
+            <button id="resetStopwatch" class="btn btn-danger">Reset</button>
+          </div>
+        </div>
 
-<!-- Countdown Timer -->
-<div class="carousel-item text-center" data-bg="linear-gradient(135deg, #42275a, #734b6d)">
+        <!-- Countdown -->
+      <div class="carousel-item text-center" 
+      data-bg="url('./media/flower.jpeg') no-repeat center center / cover">
   <h2 class="mb-4">⌛ Countdown Timer</h2>
-  <div id="countdownDisplay" class="clock-display">00:00:00</div>
-  <div class="mt-3">
-    <input type="number" id="minutesInput" placeholder="Minutes" class="form-control w-50 mx-auto mb-2">
-    <button id="startCountdown" class="btn btn-primary me-2">Start</button>
-    <button id="resetCountdown" class="btn btn-danger">Reset</button>
-  </div>
-</div>
+          <div id="countdownDisplay" class="clock-display">00:00:00</div>
+          <div class="mt-3">
+            <input type="number" id="minutesInput" placeholder="Minutes" class="form-control w-50 mx-auto mb-2">
+            <button id="startCountdown" class="btn btn-primary me-2">Start</button>
+            <button id="resetCountdown" class="btn btn-danger">Reset</button>
+          </div>
+        </div>
 
         <!-- Alarm -->
-        <div class="carousel-item text-center">
+        <div class="carousel-item text-center" 
+        data-bg="url('./media/butterfly.jpeg') no-repeat center center / cover">
           <h2 class="mb-4">⏰ Alarm Clock</h2>
           <input type="time" id="alarmTime" class="form-control w-50 mx-auto mb-2">
-
           <label for="snoozeSelect" class="form-label">Snooze Duration (minutes)</label>
           <select id="snoozeSelect" class="form-select w-50 mx-auto mb-2">
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
           </select>
-
           <button id="setAlarmBtn" class="btn btn-success">Set Alarm</button>
-
           <h4 class="mt-3">Active Alarms</h4>
           <ul id="alarmList" class="list-group w-50 mx-auto"></ul>
         </div>
       </div>
 
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#timeCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#timeCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#timeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#timeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
   </div>
+</body>
 
 
 
@@ -125,3 +134,5 @@
   <script src="script/script.js"></script>
 </body>
 </html>
+
+ 
