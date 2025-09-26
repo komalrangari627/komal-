@@ -9,7 +9,7 @@ updateClock();
 
 /* ------------------ Stopwatch ------------------ */
 let stopwatchInterval;
-let stopwatchTime = 0; // seconds
+let stopwatchTime = 0;
 
 function formatTime(seconds) {
   const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
@@ -70,7 +70,7 @@ document.getElementById("resetCountdown").addEventListener("click", () => {
 
 /* ------------------ Alarm Clock ------------------ */
 let alarms = [];
-let alarmSound = new Audio("https://www.soundjay.com/button/beep-07.wav"); 
+let alarmSound = new Audio("./media/alarm-clock-90867(1).mp3"); 
 let ringingAlarmIndex = null;
 
 document.getElementById("setAlarmBtn").addEventListener("click", () => {
@@ -164,11 +164,60 @@ setInterval(() => {
     }
   });
 }, 1000);
-/* ------------------ Carousel Background Change ------------------ */
-const carousel = document.getElementById('timeCarousel');
 
+// Carousel Background Change
+const carousel = document.getElementById('timeCarousel');
 carousel.addEventListener('slid.bs.carousel', function () {
   const activeItem = document.querySelector('.carousel-item.active');
-  const bgColor = activeItem.getAttribute('data-bg');
-  document.body.style.background = bgColor;
+  const bg = activeItem.getAttribute('data-bg');
+  document.getElementById("themeBackground").style.background = bg;
 });
+
+/* ------------------ Falling Theme Effects ------------------ */
+function setTheme(theme) {
+  // Remove any previous falling elements
+  document.querySelectorAll('.falling').forEach(el => el.remove());
+
+  if (theme === "balloon") {
+    createFalling("🎈",25, 15, 20);
+  } 
+  else if (theme === "star") {
+    createFalling("⭐",25, 10, 30);
+  } 
+  else if (theme === "flower") {
+    createFalling("🌸",25, 15, 25);
+  } 
+  else if (theme === "playful") {
+    createFalling("🎨",25, 15, 15);
+  }
+}
+
+function createFalling(symbol, count) {
+  for (let i = 0; i < count; i++) {
+    let span = document.createElement("span");
+    span.textContent = symbol;
+    span.className = "falling";
+    span.style.position = "fixed";
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.top = "-50px";
+    span.style.fontSize = Math.random() * 30 + 20 + "px";
+    span.style.animation = `fall ${Math.random() * 5 + 5}s linear infinite`;
+    document.body.appendChild(span);
+  }
+}
+
+/* Falling Animation */
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+.falling {
+  pointer-events: none;
+  animation-fill-mode: forwards;
+}
+`;
+document.head.appendChild(style);
