@@ -190,6 +190,9 @@ function setTheme(theme) {
   else if (theme === "playful") {
     createFalling("🎨",25, 15, 15);
   }
+  else if (theme === "butterfly") {
+    createFalling("🦋", 20);
+  }
 }
 
 function createFalling(symbol, count) {
