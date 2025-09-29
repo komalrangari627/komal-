@@ -70,7 +70,10 @@ document.getElementById("resetCountdown").addEventListener("click", () => {
 
 /* ------------------ Alarm Clock ------------------ */
 let alarms = [];
-let alarmSound = new Audio("./media/alarm-clock-90867(1).mp3"); 
+// Use simpler filename
+let alarmSound = new Audio("./media/alarm.mp3"); 
+alarmSound.volume = 1.0;   // Max volume
+alarmSound.loop = true;    // Always loop when ringing
 let ringingAlarmIndex = null;
 
 document.getElementById("setAlarmBtn").addEventListener("click", () => {
@@ -149,6 +152,7 @@ function stopAlarm() {
   }
 }
 
+// Check alarms every second
 setInterval(() => {
   let now = new Date();
   let current = now.getHours().toString().padStart(2, "0") + ":" + 
@@ -157,13 +161,17 @@ setInterval(() => {
   alarms.forEach((time, index) => {
     if (time === current && ringingAlarmIndex === null) {
       ringingAlarmIndex = index;
-      alarmSound.loop = true;
-      alarmSound.play();
+      // Try to play alarm sound (handle autoplay restrictions)
+      alarmSound.play().catch(err => {
+        console.log("Autoplay blocked. User must interact first.", err);
+        alert("⏰ Alarm time reached, but browser blocked sound. Click anywhere to enable sound.");
+      });
       alert("⏰ Alarm ringing for " + time);
       displayAlarms();
     }
   });
 }, 1000);
+
 
 // Carousel Background Change
 const carousel = document.getElementById('timeCarousel');
