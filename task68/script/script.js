@@ -70,11 +70,11 @@ document.getElementById("resetCountdown").addEventListener("click", () => {
 
 /* ------------------ Alarm Clock ------------------ */
 let alarms = [];
-// Use simpler filename
 let alarmSound = new Audio("./media/alarm.mp3"); 
-alarmSound.volume = 1.0;   // Max volume
-alarmSound.loop = true;    // Always loop when ringing
+alarmSound.volume = 1.0;   
+alarmSound.loop = true;    
 let ringingAlarmIndex = null;
+let autoSnoozeTimer = null; // Track auto-snooze timeout
 
 document.getElementById("setAlarmBtn").addEventListener("click", () => {
   let alarmInput = document.getElementById("alarmTime").value;
@@ -134,7 +134,7 @@ function snoozeAlarm(time, index) {
   alarms.push(snoozeFormatted);
 
   if (ringingAlarmIndex === index) {
-    stopAlarm();
+    stopAlarm(false); // false → don’t re-snooze again inside stop
   }
 
   removeAlarm(index);
@@ -142,12 +142,33 @@ function snoozeAlarm(time, index) {
   alert(`⏰ Snoozed for ${snoozeMinutes} minutes! New alarm at ${snoozeFormatted}`);
 }
 
-function stopAlarm() {
+function stopAlarm(autoSnooze = true) {
   if (ringingAlarmIndex !== null) {
     alarmSound.pause();
     alarmSound.currentTime = 0;
+
+    // Cancel auto-snooze timer
+    if (autoSnoozeTimer) {
+      clearTimeout(autoSnoozeTimer);
+      autoSnoozeTimer = null;
+    }
+
+    // If user pressed Stop, also snooze with set minutes
+    if (autoSnooze) {
+      let snoozeMinutes = parseInt(document.getElementById("snoozeSelect").value, 10) || 5;
+      let now = new Date();
+      now.setMinutes(now.getMinutes() + snoozeMinutes);
+
+      let snoozeFormatted = now.getHours().toString().padStart(2, "0") + ":" + 
+                            now.getMinutes().toString().padStart(2, "0");
+
+      alarms.push(snoozeFormatted);
+      alert(`😴 Alarm stopped & snoozed for ${snoozeMinutes} minutes! New alarm at ${snoozeFormatted}`);
+    } else {
+      alert("🔕 Alarm stopped.");
+    }
+
     ringingAlarmIndex = null;
-    alert("🔕 Alarm stopped.");
     displayAlarms();
   }
 }
@@ -161,19 +182,35 @@ setInterval(() => {
   alarms.forEach((time, index) => {
     if (time === current && ringingAlarmIndex === null) {
       ringingAlarmIndex = index;
-      // Try to play alarm sound (handle autoplay restrictions)
       alarmSound.play().catch(err => {
         console.log("Autoplay blocked. User must interact first.", err);
         alert("⏰ Alarm time reached, but browser blocked sound. Click anywhere to enable sound.");
       });
       alert("⏰ Alarm ringing for " + time);
       displayAlarms();
+
+      // Auto-snooze after 5 seconds if user does nothing
+      autoSnoozeTimer = setTimeout(() => {
+        if (ringingAlarmIndex !== null) {
+          let snoozeMinutes = parseInt(document.getElementById("snoozeSelect").value, 10) || 5;
+          let newTime = new Date();
+          newTime.setMinutes(newTime.getMinutes() + snoozeMinutes);
+
+          let snoozeFormatted = newTime.getHours().toString().padStart(2, "0") + ":" + 
+                                newTime.getMinutes().toString().padStart(2, "0");
+
+          alarms.push(snoozeFormatted);
+          stopAlarm(false); // Stop without re-snoozing again
+          alert(`😴 Auto-snoozed for ${snoozeMinutes} minutes! New alarm set at ${snoozeFormatted}`);
+          displayAlarms();
+        }
+      }, 5000);
     }
   });
 }, 1000);
 
 
-// Carousel Background Change
+/* ------------------ Carousel Background Change ------------------ */
 const carousel = document.getElementById('timeCarousel');
 carousel.addEventListener('slid.bs.carousel', function () {
   const activeItem = document.querySelector('.carousel-item.active');
@@ -187,16 +224,16 @@ function setTheme(theme) {
   document.querySelectorAll('.falling').forEach(el => el.remove());
 
   if (theme === "balloon") {
-    createFalling("🎈",25, 15, 20);
+    createFalling("🎈", 25);
   } 
   else if (theme === "star") {
-    createFalling("⭐",25, 10, 30);
+    createFalling("⭐", 25);
   } 
   else if (theme === "flower") {
-    createFalling("🌸",25, 15, 25);
+    createFalling("🌸", 25);
   } 
   else if (theme === "playful") {
-    createFalling("🎨",25, 15, 15);
+    createFalling("🎨", 25);
   }
   else if (theme === "butterfly") {
     createFalling("🦋", 20);
